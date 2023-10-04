@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container">
+    <hr />
+    <h3>ASK</h3>
+    <form method="POST" action="/ask">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          name="title"
+        />
+        <label for="floatingInput">Title</label>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea"
+          name="description"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea">Description</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary float-end">Submit</button>
+    </form>
+  </div>
+</body>
+<%- include('partials/foorter') %>

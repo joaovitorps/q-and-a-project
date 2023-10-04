@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<body>
+  <%- include('partials/navbar') %>
+  <!-- <p><%= title %></p>
+    <% if(name) {%>
+      <h1><%= name %></h1>
+      <% } else {%>
+        <h1>New user</h1>
+        <% }%>
+        <p><%= age %></p>
+        <ul>
+          <% products.forEach(product => {%>
+            <li><%= product.name %>, <%= product.price %></li>
+            <% }) %>
+          </ul>
+          <ul> -->
+  <div class="container">
+    <h1>Questions</h1>
+    <% questions.forEach(question => {%>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h3><%= question.title %></h3>
+      </div>
+      <div class="card-footer">
+        <!-- <button
+          onclick="window.location.replace('/question/<%= question.id %>')"
+          class="btn btn-primary"
+        >
+          Reply
+        </button> -->
+        <a href="/question/<%= question.id %>">
+          <button class="btn btn-primary">Reply</button>
+        </a>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</body>
+<%- include('partials/foorter') %>

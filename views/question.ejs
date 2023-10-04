@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container">
+    <hr />
+    <h1><%= question.title %></h1>
+    <p><%= question.description %></p>
+    <hr />
+    <form method="POST" action="/reply">
+      <h3>Reply</h3>
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control"
+          placeholder="Type your reply"
+          name="body"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea">Description</label>
+      </div>
+      <button class="btn btn-primary" type="submit">Reply</button>
+      <input type="hidden" name="ask_id" value="<%= question.id %>" />
+    </form>
+    <div class="card mt-3">
+      <h3 class="card-header">Replies so far</h3>
+      <ul class="list-group list-group-flush">
+        <% if(replies.length > 0) { %> <% replies.forEach((reply) => { %>
+        <li class="list-group-item"><%= reply.body %></li>
+        <% }) %> <% } else { %>
+        <li class="list-group-item">No replies for this questions yet.</li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</body>
+<%- include('partials/foorter') %>
